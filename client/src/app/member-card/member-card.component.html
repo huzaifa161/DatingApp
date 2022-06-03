@@ -8,7 +8,7 @@
     <ul class="list-inline member-icons animate text-center">
       <li class="list-inline-item">
         <button
-          routerLink="/members/{{ member.knownAs }}"
+          routerLink="/members/{{ member.knownAs.toLowerCase() }}"
           class="btn btn-primary"
         >
           <i class="fa fa-user"></i>
@@ -20,7 +20,11 @@
         </button>
       </li>
       <li class="list-inline-item">
-        <button class="btn btn-primary">
+        <button
+          routerLink="/members/{{ member.username.toLowerCase() }}"
+          [queryParams]="{ tab: 3 }"
+          class="btn btn-primary"
+        >
           <i class="fa fa-envelope"></i>
         </button>
       </li>
